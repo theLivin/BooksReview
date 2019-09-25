@@ -1,0 +1,15 @@
+body,
+input,
+button {
+  font-family: "Open Sans", "Manlo", "Monaco", "DejaVu Sans Mono",
+    "Lucida Console", "Lato";
+}
+
+body a:hover {
+  text-decoration-line: none;
+  /* color: rgb(248, 252, 248); */
+}
+
+body a{
+  color: green;
+}

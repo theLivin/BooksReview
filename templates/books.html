@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+BooksReview - Home
+{% endblock title %}
+
+
+{% block controls %}
+<!--search-->
+<form class="form-inline" method="GET" action="{{url_for('books')}}">
+<input class="form-control" name="search" value='' type="search" placeholder="Search for a book" aria-label="Search">
+<button class="btn btn-outline-success ml-1" type="submit">Search</button>
+</form>
+<!--end search-->
+
+<!--Logout Button-->
+<!--/Logout Button-->
+{% endblock controls %}
+
+<!--body-->
+{% block body %}
+
+<table class="table table-borderless">
+<thead>
+    <tr>
+        <th scope="col">Book Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Year Of Publication</th>
+    </tr>
+</thead>
+<tbody>
+    {% for book in books %}
+        <tr>
+            <td><a href="{{url_for("book",isbn=book.isbn)}}">{{book.title}}</a></td>
+            <td>{{book.author}}</td>
+            <td>{{book.year}}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+
+</table>
+
+{% endblock body %}

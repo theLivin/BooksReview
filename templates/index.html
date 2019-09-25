@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% block title %}
+BooksReview
+{% endblock title %}
+
+<!--body-->
+{% block body %}
+<div class="row">
+    <div class="col-md-6 mx-auto">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi sint architecto, nemo nulla culpa ea deleniti deserunt fugit ducimus officia dicta? Facilis atque consectetur doloremque vel nemo sint distinctio earum quidem labore eligendi asperiores magnam exercitationem sed provident est itaque tempora, reprehenderit numquam nam nobis fugiat deserunt ut quod? Excepturi ipsum harum quia non dignissimos cupiditate? Fugiat doloribus eligendi repellendus tempore quasi modi soluta maxime inventore libero cum magnam mollitia nobis explicabo, alias dolore quas, a ipsa officiis suscipit temporibus ipsam blanditiis voluptate nihil. Esse molestiae inventore minus voluptatibus dolore in, necessitatibus recusandae placeat culpa optio. Magni vitae eligendi illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laborum quisquam reiciendis suscipit ipsa tempora praesentium mollitia commodi quo inventore.
+    </div>
+    <div class="col-md-5 mx-auto">
+            <!--Login & Registration-->
+                <!--Login-->
+                <div>
+                <fieldset class="form-control">
+                <legend>Login</legend>
+                    <form action="#" method="POST">
+                    <!--Username-->
+                    <div class="form-group">
+                        <input type="text" class="form-control mt-1" placeholder="Username" name="username">
+                    </div>
+                    <!--Password-->
+                    <div class="form-group">
+                        <input type="password" class="form-control mt-1" placeholder="Passsword" name="password">
+                    </div>
+                    <!--Submit & Forgot Password-->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success mt-1">Login</button>
+                        <a href="#" class="ml-1 text-muted">Forgot Passowrd?</a>
+                    </div>
+                    </form>
+                </fieldset>
+                </div>
+                <!--End login-->
+                <hr class="bg-light mt-3 mb-5">
+                <!--Registration-->
+                <div class="mb-5">
+                <fieldset class="form-control">
+                <legend>Registration</legend>
+                    <form action="{{url_for('register')}}" method="POST" class="needs-validation" novalidate>
+                    <!--Username-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Create Username" name="username" id="username" required>
+                        <small class="invalid-feedback">
+                            Invalid Username. Use 2 or more alphabets, numbers, underscores and/or dots
+                        </small>
+                    </div>
+                    <!--Email-->
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email Address" name="email" id="email" required>
+                        <small class="invalid-feedback">
+                            Enter a valid email
+                        </small>
+                    </div>
+                    <!--Create Password-->
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Create Password" name="password" id="password" required>
+                        <small class="invalid-feedback">
+                            Password weak. Try adding numbers and special characters.
+                        </small>
+                    </div>
+                    <!--Confirm Password-->
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password" name="cpassword" id="cpassword" required>
+                        <small class="invalid-feedback">
+                            Passwords do not match
+                        </small>
+                    </div>
+                    <!--Submit-->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Complete Registration</button>
+                    </div>
+                    </form>
+                </fieldset>
+                </div>
+                <!--End Registration-->
+            <!-- End Login & Registration-->
+    </div>
+</div>
+<script src="{{url_for('static',filename="./scripts/validation.js")}}"></script>
+{% endblock body %}
+<!--end body-->

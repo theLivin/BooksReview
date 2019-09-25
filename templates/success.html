@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %}
+Success - Registration
+{% endblock title %}
+
+{% block body %}
+<div class="text-center mt-3 mb-5">
+You have successfully created a <a href="{{url_for("index")}}">BooksReview</a> account.
+</div>
+
+<!--Login-->
+<div class="row">
+<div class="col-md-6 mx-auto mt-6">
+
+<fieldset class="form-control">
+<legend><em>Please Login with your details.<em></legend>
+    <form action="#" method="POST">
+    <!--Username-->
+    <div class="form-group">
+        <input type="text" class="form-control mt-1" placeholder="Username" name="username">
+    </div>
+    <!--Password-->
+    <div class="form-group">
+        <input type="password" class="form-control mt-1" placeholder="Passsword" name="password">
+    </div>
+    <!--Submit & Forgot Password-->
+    <div class="form-group">
+        <button type="submit" class="btn btn-success mt-1">Login</button>
+        <a href="#" class="ml-1 text-muted">Forgot Passowrd?</a>
+    </div>
+    </form>
+</fieldset>
+
+</div>
+</div>
+{% endblock body %}

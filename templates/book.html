@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %}
+{{ book.title }} - BooksReview
+{% endblock title %}
+
+{% block controls %}
+<!--Book Name-->
+<!--end Book Name-->
+
+<!--Logout Button-->
+<!--/Logout Button-->
+{% endblock controls %}
+
+{% block body %}
+<div class="container row">
+    <div class="card card-body col-md-6 mt-2">
+        <h1>{{ book.title }}</h1><br>
+        <h5>by {{ book.author }} <span class="text-muted">| {{ book.year }}</span></h5><br>
+        <h6>ISBN: {{ book.isbn }}</h6>
+    </div>
+</div>
+{% endblock body %}
