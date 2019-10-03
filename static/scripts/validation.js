@@ -1,7 +1,17 @@
 document.getElementById("username").addEventListener("blur", validateUname);
 document.getElementById("email").addEventListener("blur", validateEmail);
 document.getElementById("password").addEventListener("keyup", validatePword);
-document.getElementById("cpassword").addEventListener("mouse-in", confirmPword);
+document.getElementById("cpassword").addEventListener("keyup", confirmPword);
+
+// Get alert and remove after 8seconds
+setTimeout(() => {
+  // Fade it out
+  document.getElementById("alert").classList.add("fade");
+  setTimeout(() => {
+    // Now remove
+    document.getElementById("alert").remove();
+  }, 1000);
+}, 8000);
 
 function validateUname() {
   const name = document.querySelector("#username");

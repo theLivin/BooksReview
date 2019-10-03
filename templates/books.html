@@ -7,14 +7,19 @@ BooksReview - Home
 
 {% block controls %}
 <!--search-->
-<form class="form-inline" method="GET" action="{{url_for('books')}}">
+<div class="form-inline">
+<form class="form-inline" method="GET" action="{{ url_for('search') }}">
 <input class="form-control" name="search" value='' type="search" placeholder="Search for a book" aria-label="Search">
 <button class="btn btn-outline-success ml-1" type="submit">Search</button>
+
 </form>
 <!--end search-->
 
 <!--Logout Button-->
+<a href="{{ url_for('logout')}}"><button class="btn btn-danger ml-3">Logout</button>
+</a>
 <!--/Logout Button-->
+</div>
 {% endblock controls %}
 
 <!--body-->
@@ -35,6 +40,8 @@ BooksReview - Home
             <td>{{book.author}}</td>
             <td>{{book.year}}</td>
         </tr>
+    {% else %}
+        Ooops ): Not match found !<br><br>
     {% endfor %}
 </tbody>
 

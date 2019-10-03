@@ -15,7 +15,12 @@ BooksReview
                 <div>
                 <fieldset class="form-control">
                 <legend>Login</legend>
-                    <form action="#" method="POST">
+                    {% if lmsg %}
+                        <div class="text-center alert alert-danger" id="alert">
+                            {{ lmsg }}
+                        </div>
+                    {% endif %}
+                    <form action="{{ url_for('login') }}" method="POST">
                     <!--Username-->
                     <div class="form-group">
                         <input type="text" class="form-control mt-1" placeholder="Username" name="username">
@@ -38,6 +43,11 @@ BooksReview
                 <div class="mb-5">
                 <fieldset class="form-control">
                 <legend>Registration</legend>
+                    {% if rmsg %}
+                        <div class="text-center alert alert-danger" id="alert">
+                            {{ rmsg }}
+                        </div>
+                    {% endif %}
                     <form action="{{url_for('register')}}" method="POST" class="needs-validation" novalidate>
                     <!--Username-->
                     <div class="form-group">
