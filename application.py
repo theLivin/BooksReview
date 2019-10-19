@@ -80,9 +80,11 @@ def login():
             return render_template("index.html", lmsg="invalid username or password.")
 
         # Log user in if user exists
+        #if session["users_id"] is None:
+        #    session["users_id"].append(user_id)
         session["users_id"] = user_id
 
-    if session.get("users_id"):
+    if session.get("user_id"):
         books = db.execute("SELECT * FROM books").fetchall()
         return render_template("books.html", books=books)
 
@@ -91,10 +93,9 @@ def login():
 
 @app.route('/logout')
 def logout():
-    #if session.get("user_id"):
-        #session["user_id"] = []
-        #return render_template('index.html')
-    return "Logout"
+    if session.pop("users_id",None):
+        return render_template('index.html')
+    return "Can't Logout"
 
     
 # View book details
