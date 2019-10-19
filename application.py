@@ -23,11 +23,10 @@ db = scoped_session(sessionmaker(bind=engine))
 # Index page
 @app.route("/")
 def index():
-    # User already logged in
+    # # User already logged in
     if session.get("users_id"):
         books = db.execute("SELECT * FROM books").fetchall()
         return render_template("books.html", books=books)
-
     return render_template("index.html")
 
 # Submit registration
@@ -84,18 +83,18 @@ def login():
         #    session["users_id"].append(user_id)
         session["users_id"] = user_id
 
-    if session.get("user_id"):
+    if session.get("users_id"):
         books = db.execute("SELECT * FROM books").fetchall()
         return render_template("books.html", books=books)
 
     # If user is not logged in
-    return render_template("index.html",lmsg="user authentication required")
+    return render_template("index.html",lmsg="Problem logging in")
 
 @app.route('/logout')
 def logout():
     if session.pop("users_id",None):
         return render_template('index.html')
-    return "Can't Logout"
+    return "Logout Unsucessful"
 
     
 # View book details
